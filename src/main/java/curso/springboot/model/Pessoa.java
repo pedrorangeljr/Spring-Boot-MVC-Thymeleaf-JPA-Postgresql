@@ -18,6 +18,7 @@ public class Pessoa implements Serializable {
 	
 	private String nome;
 	private String sobrenome;
+	private String email;
 	
 	public Long getId() {
 		return id;
@@ -37,4 +38,11 @@ public class Pessoa implements Serializable {
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 }
