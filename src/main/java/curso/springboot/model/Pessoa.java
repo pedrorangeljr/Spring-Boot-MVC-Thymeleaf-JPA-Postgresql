@@ -19,6 +19,7 @@ public class Pessoa implements Serializable {
 	private String nome;
 	private String sobrenome;
 	private String email;
+	private String idade;
 	
 	public Long getId() {
 		return id;
@@ -43,6 +44,12 @@ public class Pessoa implements Serializable {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getIdade() {
+		return idade;
+	}
+	public void setIdade(String idade) {
+		this.idade = idade;
 	}
 	
 }
