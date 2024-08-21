@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import curso.springboot.model.Pessoa;
 import curso.springboot.repository.PessoaRepository;
@@ -25,5 +26,14 @@ public class PessoaController {
 		
 		pessoaRepository.save(pessoa);
 		return "cadastro/cadastropessoa";
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value="/listapessoas")
+	public ModelAndView pessoas() {
+		
+		ModelAndView andView = new ModelAndView("cadastro/cadastropessoa");
+		Iterable<Pessoa> pessoaIt = pessoaRepository.findAll();
+		andView.addObject("pessoas", pessoaIt);
+		return andView;
 	}
 }
