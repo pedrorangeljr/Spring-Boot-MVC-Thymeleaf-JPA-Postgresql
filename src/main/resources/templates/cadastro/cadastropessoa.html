@@ -40,6 +40,12 @@
 						type="email" class="form-control" id="email" name="email"
 						placeholder="email">
 				</div>
+				
+				<div class="form-group">
+					<label for="exampleInputPassword1">Idade</label> <input
+						type="text" class="form-control" id="idade" name="idade"
+						placeholder="idade">
+				</div>
 				<button type="submit" class="btn btn-primary">Salvar</button>
 			</form>
 
@@ -54,6 +60,9 @@
 					<th scope="col">Nome</th>
 					<th scope="col">Sobrenome</th>
 					<th scope="col">Email</th>
+					<th scope="col">Idade</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Excluir</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -62,6 +71,9 @@
 					<td th:text="${pessoa.nome}"></td>
 					<td th:text="${pessoa.sobrenome}"></td>
 					<td th:text="${pessoa.email}"></td>
+					<td th:text= "${pessoa.idade}"></td>
+					<td><a th:href="@{/editarpessoa/{idpessoa}(idpessao=${pessoa.id})}" class="btn btn-warning">Editar</a></td>
+					
 				</tr>
 			</tbody>
 		</table>
@@ -82,37 +94,4 @@
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
 </body>
-</html>
-
-
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>Cadastro de Pessoa</title>
-</head>
-<!--   <body>
-	<h1>Cadastro de Pessoa</h1>
-	<br />
-	<form action="salvarpessoa" method="post">
-		<label>Nome: </label> <input type="text" name="nome"> <br /> <label>Sobrenome:
-		</label> <input type="text" name="sobrenome"> <br /> <label>Email:
-		</label> <input type="email" name="email"> <br /> <input type="text"
-			name="idade"> <br /> <input type="submit" value="salvar">
-	</form>
-	<br/>
-	<br/>
-	
-	<table>
-	   <tr th:each = "pessoa : ${pessoas}">
-	   
-	    <td th:text = "${pessoa.id}"></td>
-	    <td th:text = "${pessoa.nome}"></td>
-	    <td th:text = "${pessoa.sobrenome}"></td>
-	    
-	   </tr>
-	</table>
-</body> 
--->
 </html>
